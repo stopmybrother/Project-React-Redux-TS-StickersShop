@@ -18,6 +18,12 @@ export const GeneralWrapper = styled.div<IWrapper>`
   ` }
 `;
 
+export const HeaderWrapper = styled( GeneralWrapper )`
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
+
 export const Wrapper = styled.div<IWrapper>`
   margin: 0 auto;
   padding-top: ${ p => p.paddingTop || 0 }px;
