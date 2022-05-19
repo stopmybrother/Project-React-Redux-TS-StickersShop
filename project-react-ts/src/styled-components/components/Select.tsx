@@ -26,6 +26,7 @@ export const SelectContent = styled( GeneralWrapper )`
   border: 1px solid ${ p => p.theme.colors.manatee };
   color: ${ p => p.theme.colors.charcoalPrimary };
   font-weight: 400;
+  z-index: 3;
 `;
 
 export const SelectItem = styled.div`
