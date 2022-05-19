@@ -4,8 +4,7 @@ import './index.css';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { themes } from "./styled-components/themes";
 import { Header } from "./containers/Header/Header";
-import { Banner } from "./containers/Banner/Banner";
-import { StickersMain } from "./containers/StickersMain/StickersMain";
+import { MainPage } from "./pages/mainPage/mainPage";
 import { Footer } from "./containers/Footer/Footer";
 
 const GlobalStyle = createGlobalStyle`
@@ -43,8 +42,7 @@ ReactDOM.render(
         <GlobalStyle />
 
         <Header />
-        <Banner />
-        <StickersMain />
+            <MainPage />
         <Footer />
 
     </ThemeProvider>,
