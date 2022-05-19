@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { COLOR } from "../../styled-components/color-constants";
 import { GeneralWrapper, Wrapper } from "../../styled-components/components/Wrapper";
 import { BigButton } from "../../components/common-components/Button";
@@ -9,7 +8,7 @@ export const Banner = () => {
         <GeneralWrapper
             paddingTop = { 142 }
             paddingBottom = { 142 }
-            // backgroundImage = { require("./../../images/Banners/BannerFirstPage.svg") }
+            backgroundImage = { require("./../../images/Banners/BannerFirstPage.svg") }
         >
             <Wrapper
                 maxWidth = { 1232 }

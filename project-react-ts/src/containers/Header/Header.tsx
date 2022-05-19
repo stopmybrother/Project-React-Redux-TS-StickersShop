@@ -1,5 +1,5 @@
 import React from "react";
-import { GeneralWrapper, WrapperFlex } from "../../styled-components/components/Wrapper";
+import { HeaderWrapper, WrapperFlex } from "../../styled-components/components/Wrapper";
 import { Link } from "../../styled-components/components/Link";
 import { LogoSvg } from "../../styled-components/components/Logo";
 import { NavMenu } from "../../components/Nav/Nav";
@@ -8,7 +8,7 @@ import { COLOR } from "../../styled-components/color-constants";
 export const Header = () => {
     return (
         <>
-            <GeneralWrapper
+            <HeaderWrapper
                 paddingTop = { 20 }
                 paddingBottom = { 20 }
                 backgroundColor = { COLOR.silverSandPrimary }
@@ -28,7 +28,7 @@ export const Header = () => {
 
                     <NavMenu />
                 </WrapperFlex>
-            </GeneralWrapper>
+            </HeaderWrapper>
         </>
     )
 };

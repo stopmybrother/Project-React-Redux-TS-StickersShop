@@ -30,7 +30,7 @@ export const StickersList = () => {
             name: "Coffee",
             price: 1.50,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -40,7 +40,7 @@ export const StickersList = () => {
             name: "Foot",
             price: 2.50,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -50,7 +50,7 @@ export const StickersList = () => {
             name: "Girl",
             price: 1.20,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -60,7 +60,7 @@ export const StickersList = () => {
             name: "Flower",
             price: 2.30,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -70,7 +70,7 @@ export const StickersList = () => {
             name: "Macaroni",
             price: 1.20,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -80,7 +80,7 @@ export const StickersList = () => {
             name: "Sign",
             price: 1.50,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -90,7 +90,7 @@ export const StickersList = () => {
             name: "Bear",
             price: 3.50,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -100,7 +100,7 @@ export const StickersList = () => {
             name: "Idea",
             price: 2.20,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         },
@@ -110,7 +110,7 @@ export const StickersList = () => {
             name: "Sheep",
             price: 1.20,
             currency: "$",
-            hovered: false,
+            hovered: isShown,
             loved: false,
             added: false,
         }
@@ -142,7 +142,6 @@ export const StickersList = () => {
                         maxWidth = { 288 }
                     >
                         <StickerWrapper
-                            id = { sticker.name }
                             onMouseEnter = { OnMouseEnterHandler }
                             onMouseLeave = { OnMouseLeaveHandler }
                         >
