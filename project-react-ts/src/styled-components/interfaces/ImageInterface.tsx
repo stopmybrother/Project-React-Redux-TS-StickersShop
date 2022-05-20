@@ -7,6 +7,6 @@ export interface IImage {
     maxHeight?: number;
     height?: number;
     borderRadius?: number;
-    src: string;
-    alt: string;
+    src?: string;
+    alt?: string;
 }
