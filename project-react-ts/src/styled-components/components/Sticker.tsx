@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { IImage } from "../../styled-components/interfaces/ImageInterface";
 import { Text } from "./Text";
 import { CommonButtonMarginAuto } from "../../components/common-components/Button";
-
+interface IStickerWrapper {
+    marginRight: number;
+}
 export const StickerWrapper = styled.div`
   max-width: 288px;
   width: 100%;
