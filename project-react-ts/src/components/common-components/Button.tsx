@@ -14,9 +14,9 @@ export const CommonButton = styled.button<IButton>`
   padding-left: ${ p => p.paddingLeft || 0 }px;
   
   border: 1px solid ${ p => p.borderColor || "none" };
-  border-radius: ${ p => p.borderRadius }px;
+  border-radius: ${ p => p.borderRadius || 0 }px;
   
-  background-color: ${ p => p.backGroundColor || "none" };
+  background-color: ${ p => p.backGroundColor || "transparent" };
   
   font-size: ${ p => p.fontSize || 24 }px;
   line-height: ${ p => p.lineHeight || 33 }px;
@@ -34,6 +34,9 @@ export const CommonButton = styled.button<IButton>`
     background-color: ${ p => p.activeBackgroundColor };
     color: ${ p => p.activeColor };
   }
+  ${ p => p.disabled && css`
+    cursor: default;
+  ` }
 `;
 
 export const CommonButtonMarginAuto = styled( CommonButton )`
