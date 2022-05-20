@@ -1,26 +1,21 @@
 import React from "react";
-import styled from "styled-components";
 import { COLOR } from "../../styled-components/color-constants";
 import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import { CommonButton } from "../common-components/Button";
+import { TAGS, ITags } from "../../mock-data/stickers";
 
 export const SortTags = () => {
-    const tags = [
-        "all",
-        "drink",
-        "eat",
-        "sign",
-        "flower",
-        "animal",
-        "coffee"
-    ]
     return (
         <WrapperFlexWithoutMarginAuto
             maxWidth = { 635 }
             justifyContent = "space-between"
             columnGap = { 24 }
+            gridColumnStart = { 1 }
+            gridColumnEnd = { 4 }
+            gridRowStart = { 2 }
+            gridRowEnd = { 3 }
         >
-            { tags.map( tag => (
+            { TAGS.map( ( tag: ITags ) => (
                 <CommonButton
                     paddingTop = { 11 }
                     paddingRight = { 19 }
