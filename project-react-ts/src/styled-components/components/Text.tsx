@@ -18,3 +18,4 @@ export const Text = styled.p<IText>`
   color: ${ p => p.color || "none" };
   text-align: ${ p => p.textAlign || "center" };
 `;
+export default Text;
