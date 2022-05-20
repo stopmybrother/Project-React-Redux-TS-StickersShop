@@ -2,6 +2,8 @@ import React from "react";
 import { Banner } from "../../containers/Banner/Banner";
 import { COLOR } from "../../styled-components/color-constants";
 import Text from "../../styled-components/components/Text";
+import { AddCart } from "../../containers/AddCart/AddCart";
+import { RelatedProducts } from "../../containers/RelatedProducts/RelatedProducts";
 
 export const ShopPage = () => {
     return (
@@ -19,6 +21,8 @@ export const ShopPage = () => {
                     Shop
                 </ Text>
             </Banner>
+            <AddCart />
+            <RelatedProducts />
         </>
     );
 };
