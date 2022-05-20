@@ -6,6 +6,7 @@ export interface IStickers {
     name: string;
     price: number;
     currency: string;
+    stockStatus: string;
     hovered?: boolean;
     loved: boolean;
     added: boolean;
@@ -18,6 +19,7 @@ export const STICKERS: IStickers[] = [
         name: "Coffee",
         price: 1.50,
         currency: "$",
+        stockStatus: "in Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -28,6 +30,7 @@ export const STICKERS: IStickers[] = [
         name: "Foot",
         price: 2.50,
         currency: "$",
+        stockStatus: "in Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -38,6 +41,7 @@ export const STICKERS: IStickers[] = [
         name: "Girl",
         price: 1.20,
         currency: "$",
+        stockStatus: "out of Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -48,6 +52,7 @@ export const STICKERS: IStickers[] = [
         name: "Flower",
         price: 2.30,
         currency: "$",
+        stockStatus: "in Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -58,6 +63,7 @@ export const STICKERS: IStickers[] = [
         name: "Macaroni",
         price: 1.20,
         currency: "$",
+        stockStatus: "out of Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -68,6 +74,7 @@ export const STICKERS: IStickers[] = [
         name: "Sign",
         price: 1.50,
         currency: "$",
+        stockStatus: "in Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -78,6 +85,7 @@ export const STICKERS: IStickers[] = [
         name: "Bear",
         price: 3.50,
         currency: "$",
+        stockStatus: "in Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -88,6 +96,7 @@ export const STICKERS: IStickers[] = [
         name: "Idea",
         price: 2.20,
         currency: "$",
+        stockStatus: "out of Stock",
         hovered: false,
         loved: false,
         added: false,
@@ -98,8 +107,21 @@ export const STICKERS: IStickers[] = [
         name: "Sheep",
         price: 1.20,
         currency: "$",
+        stockStatus: "in Stock",
         hovered: false,
         loved: false,
         added: false,
     }
+];
+
+export type ITags = string;
+
+export const TAGS: ITags[] = [
+    "all",
+    "drink",
+    "eat",
+    "sign",
+    "flower",
+    "animal",
+    "coffee"
 ];
