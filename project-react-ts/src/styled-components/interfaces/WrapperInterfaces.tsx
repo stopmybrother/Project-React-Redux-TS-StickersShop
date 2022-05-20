@@ -21,6 +21,9 @@ export interface IWrapper {
 
     backgroundColor?: string;
     backgroundImage?: string;
+
+    borderTop?: string;
+    borderBottom?: string;
 };
 
 export interface IWrapperFlex extends IWrapper {
@@ -30,13 +33,19 @@ export interface IWrapperFlex extends IWrapper {
     alignItems?: string;
     rowGap?: number;
     columnGap?: number;
+    gridColumnStart?: number;
+    gridColumnEnd?: number;
+    gridRowStart?: number;
+    gridRowEnd?: number;
 };
 
 export interface IWrapperGrid extends IWrapper {
-    columns: number;
-    rows: number;
-    columnWidth: number;
-    rowWidth: number;
+    columns?: number;
+    rows?: number;
+    columnWidth?: number;
+    rowWidth?: number;
+    firstRowWidth?: number;
+    secondRowWidth?: number;
     justifyContent?: string;
     rowGap?: number;
     columnGap?: number;
