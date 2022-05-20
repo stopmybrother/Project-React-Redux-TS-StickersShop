@@ -15,6 +15,7 @@ export const HeadingTwo = styled.h2<IText>`
 `;
 
 export const HeadingThree = styled.h3<IText>`
+  margin-bottom: ${ p => p.marginBottom || 0 }px;
   font-size: ${ p => p.fontSize || 24 }px;
   font-weight: ${ p => p.fontWeight || 600 };
   line-height: ${ p => p.lineHeight || 33 }px;
