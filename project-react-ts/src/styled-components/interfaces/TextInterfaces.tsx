@@ -6,9 +6,17 @@ export interface IText {
     marginBottom?: number;
     marginLeft?: number;
 
+    paddingTop?: number;
+    paddingRight?: number;
+    paddingBottom?: number;
+    paddingLeft?: number;
+
+    minWidth?: number;
+
     fontSize?: number;
     fontWeight?: number;
     lineHeight?: number;
+    backgroundColor?: string;
     color?: string;
 
     textAlign?: string;
