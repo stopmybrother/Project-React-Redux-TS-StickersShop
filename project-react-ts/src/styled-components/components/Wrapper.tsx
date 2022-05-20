@@ -47,6 +47,9 @@ export const WrapperWithoutMarginAuto = styled.div<IWrapper>`
   
   max-width: ${ p => p.maxWidth || 0 }px;
   width: 100%;
+  
+  border-top: 1px solid ${ p => p.borderTop || "transparent" };
+  border-bottom: 1px solid ${ p => p.borderBottom || "transparent" };
 `;
 
 export const WrapperFlex = styled( Wrapper )<IWrapperFlex>`
@@ -66,6 +69,8 @@ export const WrapperFlexWithoutMarginAuto = styled( WrapperWithoutMarginAuto )<I
   align-items: ${ p => p.alignItems || "center" };
   row-gap: ${ p => p.rowGap || 0 }px;
   column-gap: ${ p => p.columnGap || 0 }px;
+  grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
+  grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 
 export const WrapperFlexWithoutMargin = styled( GeneralWrapper )<IWrapperFlex>`
@@ -80,11 +85,31 @@ export const WrapperFlexWithoutMargin = styled( GeneralWrapper )<IWrapperFlex>`
 export const WrapperGrid = styled( Wrapper )<IWrapperGrid>`
   margin: 0 auto 48px;
   display: grid;
-  grid-template-columns: repeat( ${ p => p.columns || 0 }, ${ p => p.columnWidth }px );
   grid-template-rows: repeat( ${ p => p.rows || 0 }, ${ p => p.rowWidth }px );
+  grid-template-columns: repeat( ${ p => p.columns || 0 }, ${ p => p.columnWidth }px );
   justify-content: ${ p => p.justifyContent || "flex-start" };
   column-gap: ${ p => p.columnGap }px;
   row-gap: ${ p => p.rowGap }px;
+`;
+
+export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat( ${ p => p.rows || 0 }, ${ p => p.rowWidth }px );
+  grid-template-columns: repeat( ${ p => p.columns || 0 }, ${ p => p.columnWidth }px );
+  justify-content: ${ p => p.justifyContent || "flex-start" };
+  column-gap: ${ p => p.columnGap }px;
+  row-gap: ${ p => p.rowGap }px;
+`;
+
+export const WrapperGridWithoutMarginAuto = styled( WrapperWithoutMarginAuto )<IWrapperGrid>`
+  margin-left: 120px;
+  display: grid;
+  grid-template-columns: 288px 220px 220px;
+  grid-template-rows: 288px 40px;
+  column-gap: 20px;
+  row-gap: 40px;
+  justify-content: ${ p => p.justifyContent || "flex-start" };
 `;
 
 export const Nav = styled.nav<IWrapperFlex>`
