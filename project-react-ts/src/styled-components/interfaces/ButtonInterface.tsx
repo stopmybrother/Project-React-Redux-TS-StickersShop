@@ -13,6 +13,11 @@ export interface IButton extends IText{
     backGroundColor?: string;
     textShadow?: string;
 
+    gridColumnStart?: number;
+    gridColumnEnd?: number;
+    gridRowStart?: number;
+    gridRowEnd?: number;
+
     hoverBorderColor?: string;
     hoverBackgroundColor?: string;
     hoverColor?: string;
