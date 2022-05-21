@@ -6,6 +6,7 @@ import { themes } from "./styled-components/themes";
 import { Header } from "./containers/Header/Header";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { ShopPage } from "./pages/ShopPage/ShopPage";
+import { WishListPage } from "./pages/WishListPage/WishListPage";
 import { Footer } from "./containers/Footer/Footer";
 
 const GlobalStyle = createGlobalStyle`
@@ -46,6 +47,7 @@ ReactDOM.render(
         <Header />
             <MainPage />
             <ShopPage />
+            <WishListPage />
         <Footer />
 
     </ThemeProvider>,
