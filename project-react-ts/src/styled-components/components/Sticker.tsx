@@ -14,6 +14,14 @@ export const StickerWrapper = styled.div`
   position: relative;
 `;
 
+export const StickerSmallWrapper = styled.div`
+  max-width: 64px;
+  width: 100%;
+  max-height: 64px;
+  height: 100%;
+  //position: relative;
+`;
+
 export const HiddenWrapper = styled.div`
   padding: 208px 60px 37px;
   position: absolute;
