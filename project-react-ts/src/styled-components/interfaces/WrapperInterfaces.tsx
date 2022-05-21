@@ -19,6 +19,11 @@ export interface IWrapper {
     minHeight?: number;
     height?: number;
 
+    gridColumnStart?: number;
+    gridColumnEnd?: number;
+    gridRowStart?: number;
+    gridRowEnd?: number;
+
     backgroundColor?: string;
     backgroundImage?: string;
 
@@ -47,6 +52,7 @@ export interface IWrapperGrid extends IWrapper {
     firstRowWidth?: number;
     secondRowWidth?: number;
     justifyContent?: string;
+    alignItems?: string;
     rowGap?: number;
     columnGap?: number;
 };
