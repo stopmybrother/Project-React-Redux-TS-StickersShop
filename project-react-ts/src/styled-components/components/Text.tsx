@@ -24,5 +24,8 @@ export const Text = styled.p<IText>`
   background-color: ${ p => p.backgroundColor || "none" };
   color: ${ p => p.color || "none" };
   text-align: ${ p => p.textAlign || "center" };
+  
+  grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
+  grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 export default Text;
