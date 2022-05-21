@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { SelectWrapper, SelectButton, SelectContent, SelectItem, SelectTextWrapper, SelectText, SelectArrow } from "../../styled-components/components/Select";
+import {
+    SelectWrapper,
+    SelectButton,
+    SelectContent,
+    SelectItem,
+    SelectTextWrapper,
+    SelectText,
+    IconFontAwesome
+} from "../../styled-components/components/Select";
 
 type TOptions = string;
 
@@ -33,9 +41,9 @@ export const Select = () => {
 
                     { isActive
                         ?
-                        <SelectArrow className = "fa fa-angle-up"></SelectArrow>
+                        <IconFontAwesome className = "fa fa-angle-up"></IconFontAwesome>
                         :
-                        <SelectArrow className = "fa fa-angle-down"></SelectArrow>
+                        <IconFontAwesome className = "fa fa-angle-down"></IconFontAwesome>
                     }
                 </SelectTextWrapper>
             </SelectButton>
