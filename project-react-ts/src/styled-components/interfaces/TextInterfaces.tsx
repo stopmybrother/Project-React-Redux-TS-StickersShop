@@ -20,4 +20,9 @@ export interface IText {
     color?: string;
 
     textAlign?: string;
+
+    gridColumnStart?: number;
+    gridColumnEnd?: number;
+    gridRowStart?: number;
+    gridRowEnd?: number;
 };
