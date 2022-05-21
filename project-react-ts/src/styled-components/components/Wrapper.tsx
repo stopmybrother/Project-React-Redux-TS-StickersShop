@@ -50,6 +50,9 @@ export const WrapperWithoutMarginAuto = styled.div<IWrapper>`
   
   border-top: 1px solid ${ p => p.borderTop || "transparent" };
   border-bottom: 1px solid ${ p => p.borderBottom || "transparent" };
+  
+  grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
+  grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 
 export const WrapperFlex = styled( Wrapper )<IWrapperFlex>`
@@ -60,6 +63,8 @@ export const WrapperFlex = styled( Wrapper )<IWrapperFlex>`
   align-items: ${ p => p.alignItems || "center" };
   row-gap: ${ p => p.rowGap || 0 }px;
   column-gap: ${ p => p.columnGap || 0 }px;
+  grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
+  grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 
 export const WrapperFlexWithoutMarginAuto = styled( WrapperWithoutMarginAuto )<IWrapperFlex>`
@@ -85,11 +90,16 @@ export const WrapperFlexWithoutMargin = styled( GeneralWrapper )<IWrapperFlex>`
 export const WrapperGrid = styled( Wrapper )<IWrapperGrid>`
   margin: 0 auto 48px;
   display: grid;
-  grid-template-rows: repeat( ${ p => p.rows || 0 }, ${ p => p.rowWidth }px );
-  grid-template-columns: repeat( ${ p => p.columns || 0 }, ${ p => p.columnWidth }px );
+  grid-template-rows: repeat( ${ p => p.rows || 0 }, ${ p => p.rowWidth || 0 }px );
+  grid-template-columns: repeat( ${ p => p.columns || 0 }, ${ p => p.columnWidth || 0 }px );
   justify-content: ${ p => p.justifyContent || "flex-start" };
+  align-items: ${ p => p.alignItems || "center" };
   column-gap: ${ p => p.columnGap }px;
   row-gap: ${ p => p.rowGap }px;
+`;
+
+export const WrapperGridWishList = styled( WrapperGrid )`
+  grid-template-columns: 480px 130px 200px 160px 230px;
 `;
 
 export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
