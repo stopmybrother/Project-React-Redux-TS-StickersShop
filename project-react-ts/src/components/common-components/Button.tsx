@@ -23,6 +23,9 @@ export const CommonButton = styled.button<IButton>`
   font-weight: ${ p => p.fontWeight || 600 };
   color: ${ p => p.color || "none" };
   
+  grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
+  grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
+  
   transition: all 0.3s linear;
   &:hover {
     border: 1px solid ${ p => p.hoverBorderColor };
