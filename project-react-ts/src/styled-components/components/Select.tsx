@@ -62,5 +62,25 @@ export const SelectText = styled( Text )`
   font-size: ${ p => p.fontSize || 20 }px;
   line-height: ${ p => p.lineHeight || 27 }px;
 `;
+interface IIconFontAwesome {
+  hoverBorderColor?: string;
+  hoverBackgroundColor?: string;
+  hoverColor?: string;
 
-export const SelectArrow = styled.span``;
+  activeBorderColor?: string;
+  activeBackgroundColor?: string;
+  activeColor?: string;
+}
+export const IconFontAwesome = styled.span<IIconFontAwesome>`
+    transition: all 0.3s linear;
+  &:hover {
+    border: 1px solid ${ p => p.hoverBorderColor };
+    background-color: ${ p => p.hoverBackgroundColor };
+    color: ${ p => p.hoverColor };
+  }
+  &:active {
+    border: 1px solid ${ p => p.activeBorderColor };
+    background-color: ${ p => p.activeBackgroundColor };
+    color: ${ p => p.activeColor };
+  }
+`;
