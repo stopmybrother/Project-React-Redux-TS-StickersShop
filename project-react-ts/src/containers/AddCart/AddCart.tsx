@@ -67,7 +67,10 @@ export const AddCart = () => {
                             >
                                 More information about sticker
                             </TextLink>
-                            <Counter />
+                            <Counter
+                                colorText = { COLOR.whiteSecondary }
+                                backgroundColorText = { COLOR.metallicBlue }
+                            />
                         </WrapperWithoutMarginAuto>
 
                         <WrapperWithoutMarginAuto
