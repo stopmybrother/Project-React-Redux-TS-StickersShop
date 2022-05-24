@@ -42,6 +42,10 @@ export const CommonButton = styled.button<IButton>`
   ` }
 `;
 
+export const CommonButtonMaxWidth = styled( CommonButton )`
+    max-width: ${ p => p.maxWidth || 0 }px;
+`;
+
 export const CommonButtonMarginAuto = styled( CommonButton )`
     margin: 0 auto;
 `;
