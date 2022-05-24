@@ -7,6 +7,7 @@ import { Header } from "./containers/Header/Header";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { ShopPage } from "./pages/ShopPage/ShopPage";
 import { WishListPage } from "./pages/WishListPage/WishListPage";
+import { BasketPage } from "./pages/BasketPage/BasketPage";
 import { Footer } from "./containers/Footer/Footer";
 
 const GlobalStyle = createGlobalStyle`
@@ -48,6 +49,7 @@ ReactDOM.render(
             <MainPage />
             <ShopPage />
             <WishListPage />
+            <BasketPage />
         <Footer />
 
     </ThemeProvider>,
