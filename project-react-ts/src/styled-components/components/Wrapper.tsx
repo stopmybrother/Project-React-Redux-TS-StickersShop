@@ -22,6 +22,7 @@ export const HeaderWrapper = styled( GeneralWrapper )`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
 `;
 
 export const Wrapper = styled.div<IWrapper>`
@@ -100,6 +101,10 @@ export const WrapperGrid = styled( Wrapper )<IWrapperGrid>`
 
 export const WrapperGridWishList = styled( WrapperGrid )`
   grid-template-columns: 480px 130px 200px 160px 230px;
+`;
+
+export const WrapperGridBasket = styled( WrapperGrid )`
+  grid-template-columns: 480px 154px 152px 184px 230px;
 `;
 
 export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
