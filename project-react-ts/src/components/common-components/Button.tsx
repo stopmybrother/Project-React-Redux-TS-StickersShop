@@ -50,6 +50,11 @@ export const CommonButtonMarginAuto = styled( CommonButton )`
     margin: 0 auto;
 `;
 
+export const CommonButtonMaxWidthMarginAuto = styled( CommonButton )`
+  margin: 0 auto;
+  max-width: ${ p => p.maxWidth || 0 }px;
+`;
+
 export const BigButton = styled.button<IButton>`
   margin: 0 auto;
   padding-top: ${ p => p.paddingTop || 0 }px;
