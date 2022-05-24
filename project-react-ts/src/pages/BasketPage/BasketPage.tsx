@@ -8,6 +8,7 @@ import { Sticker } from "../../styled-components/components/Sticker";
 import { CommonButtonMaxWidth } from "../../components/common-components/Button";
 import { Cross } from "../../components/Cross/Cross";
 import { CounterButtons } from "../../components/Counter/CounterButtons";
+import { CartTotals } from "../../components/CartTotals/CartTotals";
 
 
 export const BasketPage = () => {
@@ -159,6 +160,7 @@ export const BasketPage = () => {
                     />
                 </WrapperGridBasket>
                 <CommonButtonMaxWidth
+                    marginBottom = { 64 }
                     marginLeft = { 825 }
                     paddingTop = { 12 }
                     paddingRight = { 33 }
@@ -180,8 +182,7 @@ export const BasketPage = () => {
                 >
                     Continue shopping
                 </CommonButtonMaxWidth>
-
-
+                <CartTotals />
             </GeneralWrapper>
         </>
     );
