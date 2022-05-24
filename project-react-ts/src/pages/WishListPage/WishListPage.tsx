@@ -1,14 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { COLOR } from "../../styled-components/color-constants";
-import { GeneralWrapper, WrapperGridWishList, WrapperFlexWithoutMarginAuto, WrapperWithoutMarginAuto } from "../../styled-components/components/Wrapper";
-import { IStickers, STICKERS } from "../../mock-data/stickers";
+import { GeneralWrapper, WrapperGridWishList, WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import { Banner } from "../../containers/Banner/Banner";
 import Text from "../../styled-components/components/Text";
 import { StickerSmallWrapper } from "../../styled-components/components/Sticker";
 import { Sticker } from "../../styled-components/components/Sticker";
 import {CommonButton, CommonButtonMarginAuto} from "../../components/common-components/Button";
-import { IconFontAwesome } from "../../styled-components/components/Select";
 import { Cross } from "../../components/Cross/Cross";
 
 
