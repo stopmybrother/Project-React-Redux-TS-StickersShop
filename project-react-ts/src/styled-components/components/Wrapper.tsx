@@ -9,7 +9,7 @@ export const GeneralWrapper = styled.div<IWrapper>`
   margin-bottom: ${ p => p.marginBottom || 0 }px;
   max-width: 100%;
   width: 100%;
-  background-color: ${ p => p.backgroundColor || "none" };
+  background-color: ${ p => p.backgroundColor || "transparent" };
   
   ${ p => p.backgroundImage && css`
     background-image: url( ${ p.backgroundImage || "none" } );
