@@ -8,6 +8,7 @@ import { MainPage } from "./pages/MainPage/MainPage";
 import { ShopPage } from "./pages/ShopPage/ShopPage";
 import { WishListPage } from "./pages/WishListPage/WishListPage";
 import { BasketPage } from "./pages/BasketPage/BasketPage";
+import { CheckoutPage } from "./pages/CheckoutPage/CheckoutPage";
 import { Footer } from "./containers/Footer/Footer";
 
 const GlobalStyle = createGlobalStyle`
@@ -27,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     text-decoration: none;
   }
-
+  
   input {
     display: block;
     cursor: pointer;
@@ -50,6 +51,7 @@ ReactDOM.render(
             <ShopPage />
             <WishListPage />
             <BasketPage />
+            <CheckoutPage />
         <Footer />
 
     </ThemeProvider>,
