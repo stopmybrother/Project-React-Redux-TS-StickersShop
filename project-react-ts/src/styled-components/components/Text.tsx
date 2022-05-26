@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { COLOR } from "../color-constants";
 import { IText } from "../interfaces/TextInterfaces";
 
 export const Text = styled.p<IText>`
@@ -29,3 +30,14 @@ export const Text = styled.p<IText>`
   grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 export default Text;
+
+export const TextInForm = styled.p<IText>`
+  margin-bottom: 24px;
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+  color: ${ COLOR.spaceCadetPrimary };
+`;
