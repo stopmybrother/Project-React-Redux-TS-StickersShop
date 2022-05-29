@@ -19,9 +19,16 @@ import { RouterLink } from "../../components/common-components/RouterLink";
 import { STICKERS, IStickers } from "../../constants/stickers";
 
 export const AddCart = ( { addedSticker }: any ) => {
-    STICKERS.map((sticker) => sticker.added = false)
-    console.log(addedSticker)
-    console.log(STICKERS)
+    STICKERS.map((sticker) => sticker.added = false);
+    const HandleAddClick = ( id: number ) => {
+        STICKERS.map((sticker: IStickers) => {
+            if (sticker.id === id) {
+                sticker.inBasket = true;
+                console.log(sticker)
+            }
+            return sticker;
+        })
+    }
     return (
         <>
             <GeneralWrapper
@@ -106,6 +113,7 @@ export const AddCart = ( { addedSticker }: any ) => {
                                     color = { COLOR.whitePrimary }
                                     hoverColor = { COLOR.whitePrimary }
                                     activeColor = { COLOR.whitePrimary }
+                                    onClick = { () => HandleAddClick( sticker.id ) }
                                 >
                                     Add to cart
                                 </RouterLink>
