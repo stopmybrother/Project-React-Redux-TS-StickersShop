@@ -1,4 +1,4 @@
-import { ADD_STICKER, LOVE_STICKER } from "../actions";
+import { ADD_STICKER, REMOVE_STICKER, LOVE_STICKER } from "../actions";
 import { IStickers } from "../../../constants/stickers";
 
 interface IAddStickerAction {
@@ -6,14 +6,23 @@ interface IAddStickerAction {
     payload: IStickers;
 };
 
+interface IRemoveStickerAction {
+    type: typeof REMOVE_STICKER;
+    payload: {
+        id: number;
+    };
+}
+
 interface ILoveStickerAction {
     type: typeof LOVE_STICKER;
-    payload: IStickers;
+    payload: {
+        id: number
+    };
 };
 
-export type TStickersActionTypes = IAddStickerAction | ILoveStickerAction;
+export type TStickersActionTypes = IAddStickerAction | ILoveStickerAction | IRemoveStickerAction;
 
-export const addSticker = ( sticker:IStickers ) => {
+export const addSticker = ( sticker:IStickers ): TStickersActionTypes => {
     return {
         type: ADD_STICKER,
         payload: {
@@ -22,7 +31,16 @@ export const addSticker = ( sticker:IStickers ) => {
     };
 };
 
-export const loveSticker = ( id: number ) => {
+export const removeTask = ( id: number ): TStickersActionTypes => {
+    return {
+        type: "REMOVE_STICKER",
+        payload: {
+            id
+        }
+    };
+};
+
+export const loveSticker = ( id: number ): TStickersActionTypes => {
     return {
         type: LOVE_STICKER,
         payload: {
