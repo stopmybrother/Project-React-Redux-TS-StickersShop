@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav } from "../../styled-components/components/Wrapper";
+import { RouterLinkHeader } from "../common-components/RouterLink";
 import { Link } from "../../styled-components/components/Link";
 import { LoupeSvg, HeartSvg, BasketSvg } from "../../styled-components/components/Icons";
 
@@ -15,18 +16,20 @@ export const NavMenu = () => {
             >
                 <LoupeSvg />
             </Link>
-            <Link
+            <RouterLinkHeader
+                to = "/wishList"
                 width = { 26 }
                 height = { 26 }
             >
                 <HeartSvg />
-            </Link>
-            <Link
+            </RouterLinkHeader>
+            <RouterLinkHeader
+                to = "/basket"
                 width = { 26 }
                 height = { 26 }
             >
                 <BasketSvg />
-            </Link>
+            </RouterLinkHeader>
         </Nav>
     );
 };
