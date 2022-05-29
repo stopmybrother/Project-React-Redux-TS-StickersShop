@@ -1,11 +1,16 @@
 import React from "react";
 import { Banner } from "../../containers/Banner/Banner";
 import { COLOR } from "../../styled-components/color-constants";
+import { STICKERS } from "../../constants/stickers";
 import Text from "../../styled-components/components/Text";
 import { AddCart } from "../../containers/AddCart/AddCart";
 import { RelatedProducts } from "../../containers/RelatedProducts/RelatedProducts";
 
 export const ShopPage = () => {
+    let addedSticker = STICKERS.filter((sticker) => sticker.added)
+    let notAddedStickers = STICKERS.filter((sticker) => !sticker.added)
+    console.log(addedSticker)
+    console.log(STICKERS)
     return (
         <>
             <Banner
@@ -21,8 +26,8 @@ export const ShopPage = () => {
                     Shop
                 </ Text>
             </Banner>
-            <AddCart />
-            <RelatedProducts />
+            <AddCart addedSticker = { addedSticker } />
+            <RelatedProducts notAddedStickers = { notAddedStickers } />
         </>
     );
 };
