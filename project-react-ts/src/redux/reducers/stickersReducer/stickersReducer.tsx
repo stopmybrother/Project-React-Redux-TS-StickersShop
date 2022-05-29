@@ -1,6 +1,6 @@
 import { IStickers, STICKERS } from "../../../constants/stickers";
 import { TStickersActionTypes } from "../../actions/stickersActionCreactors/stickersActionCreator";
-import { ADD_STICKER, LOVE_STICKER } from "../../actions/actions";
+import { ADD_STICKER, REMOVE_STICKER, LOVE_STICKER } from "../../actions/actions";
 
 const initialState = STICKERS;
 
@@ -28,6 +28,8 @@ const stickersReducer = (
                     inBasket: payload.inBasket,
                 }
             ];
+        case REMOVE_STICKER :
+            return state.filter(sticker => sticker.id !== payload.id);
         case LOVE_STICKER:
             return state.filter((sticker) => sticker.id === payload.id)
         default:
