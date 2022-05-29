@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { COLOR } from "../../styled-components/color-constants";
 import {
     GeneralWrapper,
@@ -8,16 +7,44 @@ import {
     WrapperWithoutMarginAuto
 } from "../../styled-components/components/Wrapper";
 import { HeadingThree } from "../../styled-components/components/Heading";
-import {IStickers, STICKERS} from "../../mock-data/stickers";
+import { IStickers, STICKERS } from "../../constants/stickers";
+import Text from "../../styled-components/components/Text";
 import {
-    HiddenAddButton,
-    HiddenWrapper, Price,
+    HiddenWrapper,
     Sticker,
-    StickerName,
     StickerWrapper
 } from "../../styled-components/components/Sticker";
+import { CommonButtonMarginAuto } from "../../components/common-components/Button";
+import { RouterLink } from "../../components/common-components/RouterLink";
 
-export const RelatedProducts = () => {
+export const RelatedProducts = ( { notAddedStickers }: any ) => {
+    const OnMouseEnterHandler = ( id: number ) => {
+        STICKERS.map((sticker) => {
+            if (sticker.id === id) {
+                sticker.added = true;
+                sticker.hovered = true;
+            }
+            return sticker;
+        })
+    };
+    const OnMouseLeaveHandler = ( e: React.MouseEvent<HTMLDivElement> ) => {
+        e.preventDefault();
+        STICKERS.map((sticker) => {
+            sticker.added = false
+            sticker.hovered = false
+        })
+    };
+    const HandleClick = ( id: number ) => {
+        STICKERS.map( ( sticker ) => {
+            if (sticker.id === id) {
+                sticker.added = true;
+                console.log(sticker.added)
+                console.log(sticker.id)
+                console.log(sticker)
+            }
+            return sticker;
+        } )
+    };
     return (
         <>
             <GeneralWrapper
@@ -45,13 +72,14 @@ export const RelatedProducts = () => {
                         justifyContent = "space-between"
                         rowGap = { 80 }
                     >
-                        { STICKERS.slice( 1, 4 ).map( ( sticker: IStickers, index: number, array ) => (
+                        { notAddedStickers.slice( 1, 4 ).map( ( sticker: IStickers, index: number ) => (
                             <WrapperWithoutMarginAuto
                                 maxWidth = { 288 }
                             >
                                 <StickerWrapper
-                                    // onMouseEnter = { OnMouseEnterHandler }
-                                    // onMouseLeave = { OnMouseLeaveHandler }
+                                    key = { index }
+                                    onMouseEnter = { () => OnMouseEnterHandler(sticker.id) }
+                                    onMouseLeave = { OnMouseLeaveHandler }
                                 >
                                     <Sticker
                                         src ={ sticker.src }
@@ -60,26 +88,60 @@ export const RelatedProducts = () => {
                                         borderRadius = { 10 }
                                     />
                                 </StickerWrapper>
+                                { sticker.hovered && (
+                                    <HiddenWrapper>
+                                        <CommonButtonMarginAuto
+                                            paddingTop = { 8 }
+                                            paddingRight = { 27 }
+                                            paddingBottom = { 8 }
+                                            paddingLeft = { 27 }
+                                            borderRadius = { 5 }
+                                            borderColor = { COLOR.charcoalPrimary }
+                                            backGroundColor = { COLOR.charcoalOpacityFifty }
+                                            fontSize = { 20 }
+                                            lineHeight = { 27 }
+                                            color = { COLOR.whitePrimary }
+                                            hoverBorderColor = { COLOR.charcoalPrimary }
+                                            hoverBackgroundColor = { COLOR.charcoalOpacityEighty }
+                                            hoverColor = { COLOR.whitePrimary }
+                                            activeBorderColor = { COLOR.whitePrimary }
+                                            activeBackgroundColor = { COLOR.charcoalPrimary }
+                                            activeColor = { COLOR.whitePrimary }
+                                            onClick = { () => HandleClick( sticker.id ) }
+                                        >
+                                            <RouterLink
+                                                key = { sticker.id }
+                                                to = { `/shop/${ sticker.name }` }
+                                                color = { COLOR.whitePrimary }
+                                                hoverColor = { COLOR.whitePrimary }
+                                                activeColor = { COLOR.whitePrimary }
+                                                // onClick = { () => HandleClick( sticker.id ) }
+                                            >
+                                                Add to cart
+                                            </RouterLink>
+                                        </CommonButtonMarginAuto>
+                                    </HiddenWrapper>
+                                ) }
 
                                 <StickerDescription
                                     justifyContent = "space-between"
                                     columnGap = { 57 }
                                 >
-                                    <StickerName
+                                    <Text
                                         fontSize = { 20 }
                                         lineHeight = { 27 }
                                     >
                                         { sticker.name }
-                                    </StickerName>
+                                    </Text>
                                     <WrapperFlexWithoutMarginAuto
                                         maxWidth = { 62 }
                                         justifyContent = "center"
                                     >
-                                        <Price
+                                        <Text
                                             color = { COLOR.razzmatazzPrimary }
                                         >
                                             {sticker.currency}{sticker.price}
-                                        </Price>
+                                        </Text>
                                     </WrapperFlexWithoutMarginAuto>
                                 </StickerDescription>
                             </WrapperWithoutMarginAuto>
