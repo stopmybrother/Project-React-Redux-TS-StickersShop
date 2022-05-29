@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { IText } from "../interfaces/TextInterfaces";
+import { IText } from "./Text";
 
 export const HeadingOne = styled.h1<IText>`
   font-size: ${ p => p.fontSize || 40 }px;
