@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { GeneralWrapper } from "../../styled-components/components/Wrapper";
 import { TextInForm } from "../../styled-components/components/Text";
-import { IInfoInputs, PERSONAL_INFO_INPUTS } from "../../mock-data/FormInputs";
+import { IInfoInputs, PERSONAL_INFO_INPUTS } from "../../constants/FormInputs";
 import { FormInput } from "./FormInput";
 
 export const PersonalInfo = () => {
@@ -11,13 +11,9 @@ export const PersonalInfo = () => {
         phone: "",
         email: "",
     } );
-
     const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPersonalInfo( { ...personalInfo, [ e.target.name ]: e.target.value } );
     };
-
-    console.log( personalInfo );
-
     return (
         <>
             <GeneralWrapper
@@ -29,7 +25,6 @@ export const PersonalInfo = () => {
                 { PERSONAL_INFO_INPUTS.map( ( input: IInfoInputs ) => (
                     <FormInput
                         key = { input.id }
-                        // value = { personalInfo[input.name] }
                         { ...input }
                         onChange = { HandleChange }
                     />
