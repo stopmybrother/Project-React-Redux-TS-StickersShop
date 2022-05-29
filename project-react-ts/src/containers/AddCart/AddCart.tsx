@@ -23,6 +23,7 @@ export const AddCart = ( { addedSticker }: any ) => {
     const HandleAddClick = ( id: number ) => {
         STICKERS.map((sticker: IStickers) => {
             if (sticker.id === id) {
+                sticker.loved = false;
                 sticker.inBasket = true;
                 console.log(sticker)
             }
