@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {WrapperFlexWithoutMarginAuto} from "../../styled-components/components/Wrapper";
-import {COLOR} from "../../styled-components/color-constants";
-import {CommonButton} from "../common-components/Button";
+import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
+import { COLOR } from "../../styled-components/color-constants";
+import { CommonButton } from "../common-components/Button";
 import Text from "../../styled-components/components/Text";
 
 interface ICounter {
@@ -21,7 +21,8 @@ export const CounterButtons = ( {
                                     gridRowStart,
                                     gridRowEnd
                                 }: ICounter) => {
-    const [ count, setCount ] = useState( 0 )
+    const [ count, setCount ] = useState( 0 );
+
     return (
         <WrapperFlexWithoutMarginAuto
             maxWidth = { 152 }
