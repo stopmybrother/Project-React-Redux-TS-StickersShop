@@ -14,6 +14,7 @@ export interface IStickers {
     hovered?: boolean;
     loved: boolean;
     added: boolean;
+    inBasket: boolean;
 };
 
 export const STICKERS: IStickers[] = [
@@ -31,6 +32,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 2,
@@ -46,6 +48,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 3,
@@ -61,6 +64,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 4,
@@ -76,6 +80,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 5,
@@ -91,6 +96,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 6,
@@ -106,6 +112,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 7,
@@ -121,6 +128,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 8,
@@ -136,6 +144,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     },
     {
         id: 9,
@@ -151,6 +160,7 @@ export const STICKERS: IStickers[] = [
         hovered: false,
         loved: false,
         added: false,
+        inBasket: false,
     }
 ];
 
