@@ -25,6 +25,7 @@ const stickersReducer = (
                     hovered: payload.hovered,
                     loved: payload.loved,
                     added: payload.added,
+                    inBasket: payload.inBasket,
                 }
             ];
         case LOVE_STICKER:
