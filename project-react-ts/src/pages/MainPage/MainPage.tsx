@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { COLOR } from "../../styled-components/color-constants";
 import { Banner } from "../../containers/Banner/Banner";
 import { StickersMain } from "../../containers/StickersMain/StickersMain";
 import { BigButton } from "../../components/common-components/Button";
-import { COLOR } from "../../styled-components/color-constants";
+
+interface IPreloaderState {
+    books?: any[];
+};
 
 export const MainPage = () => {
+    const [ data, setData ] = useState<IPreloaderState | null>(null);
+    const [ loading, setLoading ] = useState( false );
+
+    useEffect( () => {
+        setLoading( true )
+        fetch( "https://api.itbook.store/1.0/new" )
+            .then( ( response ) => response.json() )
+            .then( ( data ) => updateState( data.books ) )
+            .catch( (error) => error );
+
+        const updateState = ( books: IPreloaderState[ keyof IPreloaderState ] ) => {
+            setLoading( false );
+            setData( { books } )
+        }
+    }, [] );
+
     return (
         <>
             <Banner
@@ -28,7 +48,10 @@ export const MainPage = () => {
                     Create your own stickers
                 </ BigButton>
             </Banner>
-            <StickersMain />
+            <StickersMain
+                data = { data }
+                isLoading = { loading }
+            />
         </>
     );
 };
