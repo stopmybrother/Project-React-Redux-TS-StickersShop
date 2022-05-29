@@ -1,11 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import { ILink, ITextLink } from "../interfaces/LinkInterfaces";
+
+export interface ILink {
+    width?: number;
+    height?: number;
+};
 
 export const Link = styled.a<ILink>`
   width: ${ p => p.width || 0 }px;
   height: ${ p => p.height || 0 }px;
 `;
+
+export interface ITextLink {
+    marginTop?: number;
+    marginRight?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+
+    fontSize?: number;
+    fontWeight?: number;
+    lineHeight?: number;
+    color?: string;
+
+    textAlign?: string;
+};
 
 export const TextLink = styled.a<ITextLink>`
   margin-top: ${ p => p.marginTop || 0 }px;
