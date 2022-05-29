@@ -39,12 +39,21 @@ export const StickersList = ( { loveSticker }: IStickerList ) => {
         })
     };
     const HandleClick = ( id: number ) => {
-        STICKERS.map( ( sticker ) => {
+        STICKERS.map( ( sticker: IStickers ) => {
                 if (sticker.id === id) {
                     sticker.added = true;
                 }
                 return sticker;
             } )
+    };
+    const HandleLoveClick = ( id: number ) => {
+        STICKERS.map((sticker: IStickers) => {
+            if (sticker.id === id ) {
+                sticker.loved = !sticker.loved;
+            }
+            console.log(sticker)
+            return sticker;
+        })
     };
     return (
             <WrapperGrid
@@ -103,6 +112,7 @@ export const StickersList = ( { loveSticker }: IStickerList ) => {
                                     </CommonButtonMarginAuto>
                                     <Heart
                                         onClick = { () => {
+                                            HandleLoveClick(sticker.id)
                                             loveSticker(sticker.id)
                                         } }
                                     />
