@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { GeneralWrapper } from "../../styled-components/components/Wrapper";
 import { TextInForm } from "../../styled-components/components/Text";
-import { IInfoInputs, PAYMENT_INFO_INPUTS } from "../../mock-data/FormInputs";
+import { IInfoInputs, PAYMENT_INFO_INPUTS } from "../../constants/FormInputs";
 import { FormInput } from "./FormInput";
 
 export const PaymentInfo = () => {
@@ -11,13 +11,9 @@ export const PaymentInfo = () => {
         expiryDate: "",
         cvc: "",
     } );
-
     const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPaymentInfo( { ...paymentInfo, [ e.target.name ]: e.target.value } );
     };
-
-    console.log( paymentInfo );
-
     return (
         <>
             <GeneralWrapper
