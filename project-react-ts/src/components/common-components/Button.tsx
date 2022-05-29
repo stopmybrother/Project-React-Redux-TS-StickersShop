@@ -1,6 +1,23 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { IButton } from "../../styled-components/interfaces/ButtonInterface";
+import { IText } from "../../styled-components/components/Text";
+
+export interface IButton extends IText{
+  maxWidth?: number;
+  borderRadius?: number;
+  borderColor?: string;
+
+  backGroundColor?: string;
+  textShadow?: string;
+
+  hoverBorderColor?: string;
+  hoverBackgroundColor?: string;
+  hoverColor?: string;
+
+  activeBorderColor?: string;
+  activeBackgroundColor?: string;
+  activeColor?: string;
+};
 
 export const CommonButton = styled.button<IButton>`
   margin-top: ${ p => p.marginTop || 0 }px;
