@@ -7,7 +7,7 @@ import { CounterButtons } from "./CounterButtons";
 interface ICounterWrapper {
     colorText?: string;
     backgroundColorText?: string;
-}
+};
 
 export const Counter = ( {
                             colorText,
@@ -34,5 +34,5 @@ export const Counter = ( {
                 />
             </WrapperWithoutMarginAuto>
         </>
-    )
+    );
 };
