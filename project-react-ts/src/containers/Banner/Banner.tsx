@@ -6,7 +6,7 @@ interface IBanner {
     paddingBottom: number;
     backgroundImage: string;
     children?: React.ReactNode;
-}
+};
 
 export const Banner = ( {
                             backgroundImage,
