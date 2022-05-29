@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { COLOR } from "../../styled-components/color-constants";
 import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import Text from "../../styled-components/components/Text";
-import { IInfoInputs, SHIPPING_INFO_INPUTS } from "../../mock-data/FormInputs";
 
 const RadioSpan = styled.span`
   width: calc(100% - 3px);
