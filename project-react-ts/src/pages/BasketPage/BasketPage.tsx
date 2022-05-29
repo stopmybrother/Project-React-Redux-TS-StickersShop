@@ -130,7 +130,7 @@ export const BasketPage = () => {
                             gridRowStart = { 1 }
                             gridRowEnd = { 2 }
                         >
-                            { sticker.price }
+                            { sticker.price }{ sticker.currency }
                         </Text>
                         <CounterButtons
                             colorText = { COLOR.charcoalPrimary }
@@ -150,7 +150,7 @@ export const BasketPage = () => {
                             gridRowStart = { 1 }
                             gridRowEnd = { 2 }
                         >
-                            { sticker.price }
+                            { sticker.price }{ sticker.currency }
                         </Text>
                         <Cross
                             marginLeft = { 30 }
