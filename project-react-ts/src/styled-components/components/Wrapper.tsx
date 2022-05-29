@@ -1,7 +1,36 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { IWrapper, IWrapperFlex, IWrapperGrid } from "../interfaces/WrapperInterfaces";
-import { IStickerDescription } from "../interfaces/StickerDescriptionInterface";
+
+export interface IWrapper {
+  marginTop?: number;
+  marginRight?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+
+  paddingTop?: number;
+  paddingRight?: number;
+  paddingBottom?: number;
+  paddingLeft?: number;
+
+  maxWidth?: number;
+  minWidth?: number;
+  width?: number;
+
+  maxHeight?: number;
+  minHeight?: number;
+  height?: number;
+
+  gridColumnStart?: number;
+  gridColumnEnd?: number;
+  gridRowStart?: number;
+  gridRowEnd?: number;
+
+  backgroundColor?: string;
+  backgroundImage?: string;
+
+  borderTop?: string;
+  borderBottom?: string;
+};
 
 export const GeneralWrapper = styled.div<IWrapper>`
   padding-top: ${ p => p.paddingTop || 0 }px;
@@ -9,6 +38,7 @@ export const GeneralWrapper = styled.div<IWrapper>`
   margin-bottom: ${ p => p.marginBottom || 0 }px;
   max-width: 100%;
   width: 100%;
+  min-height: ${ p => p.minHeight || 0 }vh;
   background-color: ${ p => p.backgroundColor || "transparent" };
   
   ${ p => p.backgroundImage && css`
@@ -56,6 +86,15 @@ export const WrapperWithoutMarginAuto = styled.div<IWrapper>`
   grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 
+interface IWrapperFlex extends IWrapper {
+  flexDirection?: string;
+  flexWrap?: string;
+  justifyContent?: string;
+  alignItems?: string;
+  rowGap?: number;
+  columnGap?: number;
+};
+
 export const WrapperFlex = styled( Wrapper )<IWrapperFlex>`
   display: flex;
   flex-direction: ${ p => p.flexDirection || "row" };
@@ -87,6 +126,19 @@ export const WrapperFlexWithoutMargin = styled( GeneralWrapper )<IWrapperFlex>`
   row-gap: ${ p => p.rowGap || 0 }px;
   column-gap: ${ p => p.columnGap || 0 }px;
 `;
+
+interface IWrapperGrid extends IWrapper {
+  columns?: number;
+  rows?: number;
+  columnWidth?: number;
+  rowWidth?: number;
+  firstRowWidth?: number;
+  secondRowWidth?: number;
+  justifyContent?: string;
+  alignItems?: string;
+  rowGap?: number;
+  columnGap?: number;
+};
 
 export const WrapperGrid = styled( Wrapper )<IWrapperGrid>`
   margin: 0 auto 48px;
@@ -134,6 +186,11 @@ export const Nav = styled.nav<IWrapperFlex>`
   justify-content: ${ p => p.justifyContent || "flex-start" };
   align-items: ${ p => p.alignItems || "center" };
 `;
+
+export interface IStickerDescription {
+  maxWidth?: number;
+  width?: number;
+}
 
 export const StickerDescription = styled( WrapperFlexWithoutMargin )<IStickerDescription>`
   margin-left: auto;
