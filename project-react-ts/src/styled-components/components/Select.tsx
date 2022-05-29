@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { GeneralWrapper, WrapperWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import { Text } from "./Text";
-import { ISelectTextWrapper } from "../interfaces/SelectInterfaces";
 
 export const SelectWrapper = styled( WrapperWithoutMarginAuto )`
   max-width: ${ p => p.maxWidth || 0 }px;
@@ -46,6 +45,10 @@ export const SelectItem = styled.div`
   }
 `;
 
+interface ISelectTextWrapper {
+  border: boolean;
+};
+
 export const SelectTextWrapper = styled.div<ISelectTextWrapper>`
   cursor: pointer;
   display: flex;
@@ -62,6 +65,7 @@ export const SelectText = styled( Text )`
   font-size: ${ p => p.fontSize || 20 }px;
   line-height: ${ p => p.lineHeight || 27 }px;
 `;
+
 interface IIconFontAwesome {
   hoverBorderColor?: string;
   hoverBackgroundColor?: string;
@@ -70,7 +74,8 @@ interface IIconFontAwesome {
   activeBorderColor?: string;
   activeBackgroundColor?: string;
   activeColor?: string;
-}
+};
+
 export const IconFontAwesome = styled.span<IIconFontAwesome>`
     transition: all 0.3s linear;
   &:hover {
