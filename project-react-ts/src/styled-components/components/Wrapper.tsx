@@ -155,9 +155,6 @@ export const WrapperGridWishList = styled( WrapperGrid )`
   grid-template-columns: 480px 130px 200px 160px 230px;
 `;
 
-export const WrapperGridBasket = styled( WrapperGrid )`
-  grid-template-columns: 480px 154px 152px 184px 230px;
-`;
 
 export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
   margin: 0 auto;
@@ -165,8 +162,12 @@ export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
   grid-template-rows: repeat( ${ p => p.rows || 0 }, ${ p => p.rowWidth }px );
   grid-template-columns: repeat( ${ p => p.columns || 0 }, ${ p => p.columnWidth }px );
   justify-content: ${ p => p.justifyContent || "flex-start" };
+  align-items: ${ p => p.alignItems || "center" };
   column-gap: ${ p => p.columnGap }px;
   row-gap: ${ p => p.rowGap }px;
+`;
+export const WrapperGridBasket = styled( WrapperGridWithoutMarginBottom )`
+  grid-template-columns: 480px 154px 152px 184px 230px;
 `;
 
 export const WrapperGridWithoutMarginAuto = styled( WrapperWithoutMarginAuto )<IWrapperGrid>`
