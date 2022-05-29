@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import { WrapperFlexWithoutMarginAuto, WrapperFlex } from "../../styled-components/components/Wrapper";
 import { CommonButtonMaxWidthMarginAuto } from "../common-components/Button";
-import {COLOR} from "../../styled-components/color-constants";
+import { COLOR } from "../../styled-components/color-constants";
 import Text from "../../styled-components/components/Text";
+import { RouterLink } from "../common-components/RouterLink";
 
 export const CartTotals = () => {
     return (
@@ -116,7 +116,14 @@ export const CartTotals = () => {
                     activeBackgroundColor = { COLOR.maastrichtBlueSecondary }
                     activeColor = { COLOR.whitePrimary }
                 >
-                    Proceed to checkout
+                    <RouterLink
+                        to = "/checkout"
+                        color = { COLOR.whitePrimary }
+                        hoverColor = { COLOR.whitePrimary }
+                        activeColor = { COLOR.whitePrimary }
+                    >
+                        Proceed to checkout
+                    </RouterLink>
                 </CommonButtonMaxWidthMarginAuto>
             </WrapperFlexWithoutMarginAuto>
         </>
