@@ -14,6 +14,8 @@ interface ICross {
     gridColumnEnd?: number;
     gridRowStart?: number;
     gridRowEnd?: number;
+    id?: number;
+    removeSticker?: (id: number) => void;
 };
 
 const CrossWrapper = styled.div<ICross>`
@@ -67,6 +69,8 @@ export const Cross = ( {
                            backgroundColorSpan,
                            hoverBackgroundColorSpan,
                            activeBackgroundColorSpan,
+                           id,
+                           removeSticker
                         }:ICross ) => {
     return (
         <>
@@ -81,6 +85,11 @@ export const Cross = ( {
                 gridColumnEnd = { gridColumnEnd }
                 gridRowStart = { gridRowStart }
                 gridRowEnd = { gridRowEnd }
+                // onClick = { () => {
+                //     if (removeSticker) {
+                //         removeSticker(id)
+                //     }
+                // } }
             >
                 <CrossSpan
                     widthSpan = { widthSpan }
