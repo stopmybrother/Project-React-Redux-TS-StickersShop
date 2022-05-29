@@ -40,6 +40,7 @@ export const StickersMain = ( data: any, loading: boolean ) => {
             hovered: sticker.hovered,
             loved: sticker.loved,
             added: sticker.added,
+            inBasket: sticker.inBasket,
         })),
         [dispatch]
     );
