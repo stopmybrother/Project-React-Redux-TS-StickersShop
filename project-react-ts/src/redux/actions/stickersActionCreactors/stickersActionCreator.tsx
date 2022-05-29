@@ -31,7 +31,7 @@ export const addSticker = ( sticker:IStickers ): TStickersActionTypes => {
     };
 };
 
-export const removeTask = ( id: number ): TStickersActionTypes => {
+export const removeSticker = ( id: number ): TStickersActionTypes => {
     return {
         type: "REMOVE_STICKER",
         payload: {
