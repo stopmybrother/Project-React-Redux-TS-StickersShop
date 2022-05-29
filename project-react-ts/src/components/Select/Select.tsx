@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FILTER_STICKERS, IFilterSticker } from "../../constants/stickers";
 import {
     SelectWrapper,
     SelectButton,
@@ -8,21 +9,15 @@ import {
     SelectText,
     IconFontAwesome
 } from "../../styled-components/components/Select";
+import { ISortProps } from "../../containers/Sort/Sort";
 
-type TOptions = string;
-
-export const Select = () => {
+export const Select = ( {
+                            amount,
+                            activeFilter,
+                            filterChange
+                        }: ISortProps ) => {
     const [ isSelected, setIsSelected ] = useState( "" )
     const [ isActive, setIsActive ] = useState( false );
-
-    const options: TOptions[] = [
-        "Relevance",
-        "New products first",
-        "Name, A to Z",
-        "Name, Z to A",
-        "Price, low to high",
-        "Price, high to low",
-    ]
 
     return (
         <SelectWrapper
@@ -50,14 +45,17 @@ export const Select = () => {
 
             { isActive && (
                 <SelectContent>
-                    { options.map( option => (
+                    { FILTER_STICKERS.map( ( option: IFilterSticker, index: number ) => (
                         <SelectItem
-                            onClick = { e => {
-                                setIsSelected( option )
+                            onClick = { () => {
+                                setIsSelected( option.text )
                                 setIsActive( false )
+                                if (filterChange) {
+                                    filterChange(option.id)
+                                }
                             } }
                         >
-                            { option }
+                            { option.text }
                         </SelectItem>
                     ) ) }
                 </SelectContent>
