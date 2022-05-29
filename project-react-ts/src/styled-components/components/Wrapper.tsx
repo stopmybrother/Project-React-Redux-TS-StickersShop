@@ -151,9 +151,6 @@ export const WrapperGrid = styled( Wrapper )<IWrapperGrid>`
   row-gap: ${ p => p.rowGap }px;
 `;
 
-export const WrapperGridWishList = styled( WrapperGrid )`
-  grid-template-columns: 480px 130px 200px 160px 230px;
-`;
 
 
 export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
@@ -166,6 +163,11 @@ export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
   column-gap: ${ p => p.columnGap }px;
   row-gap: ${ p => p.rowGap }px;
 `;
+
+export const WrapperGridWishList = styled( WrapperGridWithoutMarginBottom )`
+  grid-template-columns: 480px 130px 200px 160px 230px;
+`;
+
 export const WrapperGridBasket = styled( WrapperGridWithoutMarginBottom )`
   grid-template-columns: 480px 154px 152px 184px 230px;
 `;
