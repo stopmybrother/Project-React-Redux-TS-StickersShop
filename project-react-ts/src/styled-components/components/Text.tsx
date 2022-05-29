@@ -1,7 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import { COLOR } from "../color-constants";
-import { IText } from "../interfaces/TextInterfaces";
+
+export interface IText {
+    marginTop?: number;
+    marginRight?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+
+    paddingTop?: number;
+    paddingRight?: number;
+    paddingBottom?: number;
+    paddingLeft?: number;
+
+    minWidth?: number;
+
+    fontSize?: number;
+    fontWeight?: number;
+    lineHeight?: number;
+    textAlign?: string;
+
+    color?: string;
+    backgroundColor?: string;
+
+    gridColumnStart?: number;
+    gridColumnEnd?: number;
+    gridRowStart?: number;
+    gridRowEnd?: number;
+}
 
 export const Text = styled.p<IText>`
   margin-top: ${ p => p.marginTop || 0 }px;
