@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { stickerSelector } from "../../redux/selectors/stickerSelectors/stickerSelector";
+import { removeSticker } from "../../redux/actions/stickersActionCreactors/stickersActionCreator";
 import { COLOR } from "../../styled-components/color-constants";
 import { GeneralWrapper, WrapperGridBasket, WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import { Banner } from "../../containers/Banner/Banner";
@@ -13,7 +16,17 @@ import { RouterLink } from "../../components/common-components/RouterLink";
 import { IStickers, STICKERS } from "../../constants/stickers";
 
 export const BasketPage = () => {
-    let stickersInBasket = STICKERS.filter((sticker: IStickers) => sticker.inBasket)
+    let stickersInBasket = STICKERS.filter((sticker: IStickers) => sticker.inBasket);
+
+    const basketStickers = useSelector( stickerSelector );
+
+    const dispatch = useDispatch();
+
+    const dispatchedRemoveSticker = useCallback(
+        (id: number) => dispatch(removeSticker(id)),
+        [dispatch]
+    );
+
     return (
         <>
             <Banner
@@ -153,6 +166,7 @@ export const BasketPage = () => {
                             { sticker.price }{ sticker.currency }
                         </Text>
                         <Cross
+                            id = { sticker.id }
                             marginLeft = { 30 }
                             width = { 40 }
                             height = { 40 }
@@ -165,6 +179,7 @@ export const BasketPage = () => {
                             gridColumnEnd = { 6 }
                             gridRowStart = { 1 }
                             gridRowEnd = { 2 }
+                            removeSticker = { dispatchedRemoveSticker}
                         />
                     </WrapperGridBasket>
                     ))}
