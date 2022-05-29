@@ -11,7 +11,6 @@ import { CounterButtons } from "../../components/Counter/CounterButtons";
 import { CartTotals } from "../../components/CartTotals/CartTotals";
 import { RouterLink } from "../../components/common-components/RouterLink";
 
-
 export const BasketPage = () => {
     return (
         <>
