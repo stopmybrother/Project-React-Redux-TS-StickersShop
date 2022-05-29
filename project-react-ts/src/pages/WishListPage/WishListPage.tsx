@@ -16,9 +16,7 @@ export const WishListPage = () => {
     const HandleClick = ( id: number ) => {
         STICKERS.map( ( sticker: IStickers ) => {
             if (sticker.id === id) {
-                sticker.loved = false
                 sticker.added = true;
-                console.log(sticker)
             }
             return sticker;
         } )
