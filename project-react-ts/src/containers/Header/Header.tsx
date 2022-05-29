@@ -1,6 +1,6 @@
 import React from "react";
 import { HeaderWrapper, WrapperFlex } from "../../styled-components/components/Wrapper";
-import { Link } from "../../styled-components/components/Link";
+import { RouterLink } from "../../components/common-components/RouterLink";
 import { LogoSvg } from "../../styled-components/components/Logo";
 import { NavMenu } from "../../components/Nav/Nav";
 import { COLOR } from "../../styled-components/color-constants";
@@ -19,12 +19,13 @@ export const Header = () => {
                     paddingLeft = { 16 }
                     justifyContent = "space-between"
                 >
-                    <Link
+                    <RouterLink
+                        to = "/home"
                         width = { 49 }
                         height = { 49 }
                     >
                         <LogoSvg />
-                    </Link>
+                    </RouterLink>
 
                     <NavMenu />
                 </WrapperFlex>
