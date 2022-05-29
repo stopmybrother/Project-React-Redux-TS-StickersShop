@@ -9,6 +9,7 @@ import { CommonButtonMaxWidth } from "../../components/common-components/Button"
 import { Cross } from "../../components/Cross/Cross";
 import { CounterButtons } from "../../components/Counter/CounterButtons";
 import { CartTotals } from "../../components/CartTotals/CartTotals";
+import { RouterLink } from "../../components/common-components/RouterLink";
 
 
 export const BasketPage = () => {
@@ -99,7 +100,6 @@ export const BasketPage = () => {
                                 alt = "Girl"
                                 maxWidth = { 64 }
                                 maxHeight = { 64 }
-                                // marginBottom = { 16 }
                                 borderRadius = { 10 }
                             />
                         </StickerSmallWrapper>
@@ -180,7 +180,14 @@ export const BasketPage = () => {
                     activeColor = { COLOR.whiteSecondary }
                     activeBorderColor = { COLOR.maastrichtBlueSecondary }
                 >
-                    Continue shopping
+                    <RouterLink
+                        to = "/home"
+                        color = { COLOR.spaceCadetPrimary }
+                        hoverColor = { COLOR.whiteSecondary }
+                        activeColor = { COLOR.whiteSecondary }
+                    >
+                        Continue shopping
+                    </RouterLink>
                 </CommonButtonMaxWidth>
                 <CartTotals />
             </GeneralWrapper>
