@@ -5,7 +5,7 @@ import { Banner } from "../../containers/Banner/Banner";
 import Text from "../../styled-components/components/Text";
 import { StickerSmallWrapper } from "../../styled-components/components/Sticker";
 import { Sticker } from "../../styled-components/components/Sticker";
-import {CommonButton, CommonButtonMarginAuto} from "../../components/common-components/Button";
+import { CommonButton, CommonButtonMarginAuto } from "../../components/common-components/Button";
 import { Cross } from "../../components/Cross/Cross";
 
 
@@ -32,6 +32,7 @@ export const WishListPage = () => {
             <GeneralWrapper
                 paddingTop = { 50 }
                 paddingBottom = { 50 }
+                minHeight = { 70 }
             >
                 <WrapperGridWishList
                     rows = { 3 }
@@ -86,7 +87,6 @@ export const WishListPage = () => {
                                 alt = "Girl"
                                 maxWidth = { 64 }
                                 maxHeight = { 64 }
-                                // marginBottom = { 16 }
                                 borderRadius = { 10 }
                             />
                         </StickerSmallWrapper>
