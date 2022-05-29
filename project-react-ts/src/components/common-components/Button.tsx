@@ -67,6 +67,10 @@ export const CommonButtonMarginAuto = styled( CommonButton )`
     margin: 0 auto;
 `;
 
+export const CommonButtonWishListMarginAuto = styled( CommonButton )`
+    margin: 48px auto 0;
+`;
+
 export const CommonButtonMaxWidthMarginAuto = styled( CommonButton )`
   margin: 0 auto;
   max-width: ${ p => p.maxWidth || 0 }px;
