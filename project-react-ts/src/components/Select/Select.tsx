@@ -25,7 +25,7 @@ export const Select = ( {
         >
             <SelectButton
                 maxWidth = { 111 }
-                onClick = { e => setIsActive( !isActive ) }
+                onClick = { () => setIsActive( !isActive ) }
             >
                 <SelectTextWrapper
                     border = { isActive }
