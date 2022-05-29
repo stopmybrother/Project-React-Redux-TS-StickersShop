@@ -8,10 +8,21 @@ import { Sticker } from "../../styled-components/components/Sticker";
 import { CommonButton, CommonButtonWishListMarginAuto } from "../../components/common-components/Button";
 import { Cross } from "../../components/Cross/Cross";
 import {IStickers, STICKERS} from "../../constants/stickers";
+import {RouterLink} from "../../components/common-components/RouterLink";
 
 
 export const WishListPage = () => {
-    let stickersLoved = STICKERS.filter((sticker: IStickers) => sticker.loved)
+    let stickersLoved = STICKERS.filter((sticker: IStickers) => sticker.loved);
+    const HandleClick = ( id: number ) => {
+        STICKERS.map( ( sticker: IStickers ) => {
+            if (sticker.id === id) {
+                sticker.loved = false
+                sticker.added = true;
+                console.log(sticker)
+            }
+            return sticker;
+        } )
+    };
     return (
         <>
             <Banner
@@ -142,19 +153,29 @@ export const WishListPage = () => {
                             backGroundColor = { COLOR.whitePrimary }
                             fontSize = { 20 }
                             lineHeight = { 27 }
-                            color = { COLOR.spaceCadetPrimary }
+                            // color = { COLOR.spaceCadetPrimary }
                             hoverBorderColor = { COLOR.spaceCadetPrimary }
                             hoverBackgroundColor = { COLOR.spaceCadetPrimary }
-                            hoverColor = { COLOR.whiteSecondary }
+                            // hoverColor = { COLOR.whiteSecondary }
                             activeBorderColor = { COLOR.maastrichtBlueSecondary }
                             activeBackgroundColor = { COLOR.metallicBlue }
-                            activeColor = { COLOR.whitePrimary }
+                            // activeColor = { COLOR.whitePrimary }
                             gridColumnStart = { 4 }
                             gridColumnEnd = { 5 }
                             gridRowStart = { 1 }
                             gridRowEnd = { 2 }
+                            onClick = { () => HandleClick( sticker.id ) }
                         >
-                            Add to cart
+                            <RouterLink
+                                key = { sticker.id }
+                                to = { `/shop/${ sticker.name }` }
+                                color = { COLOR.spaceCadetPrimary }
+                                hoverColor = { COLOR.whiteSecondary }
+                                activeColor = { COLOR.whitePrimary }
+                                // onClick = { () => HandleClick( sticker.id ) }
+                            >
+                                Add to cart
+                            </RouterLink>
                         </CommonButton>
                         <Cross
                             marginLeft = { 30 }
