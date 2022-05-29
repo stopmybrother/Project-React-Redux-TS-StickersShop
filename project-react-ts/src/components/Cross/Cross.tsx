@@ -14,7 +14,7 @@ interface ICross {
     gridColumnEnd?: number;
     gridRowStart?: number;
     gridRowEnd?: number;
-}
+};
 
 const CrossWrapper = styled.div<ICross>`
   position: relative;
@@ -24,30 +24,25 @@ const CrossWrapper = styled.div<ICross>`
   height: ${ p => p.height || 0 }px;
   grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
   grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
-  
   & span {
     top: 20px;
     left: 8px;
     background-color: ${ p => p.backgroundColorSpan || "none" };
   }
-  
   transition: all 0.5s linear;
   &:hover {
     & span {
       background-color: ${ p => p.hoverBackgroundColorSpan || "none" };
     }
   }
-
   &:active {
     & span {
       background-color: ${ p => p.activeBackgroundColorSpan || "none" };
     }
   }
-
   & span:nth-child(1) {
     transform: rotate(45deg);
   }
-
   & span:nth-child(2) {
     transform: rotate(-45deg);
   }
