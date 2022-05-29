@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { WrapperWithoutMarginAuto, WrapperFlexWithoutMargin } from "../../styled-components/components/Wrapper";
 import { COLOR } from "../../styled-components/color-constants";
 
