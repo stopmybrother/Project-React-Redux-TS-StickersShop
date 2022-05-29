@@ -2,9 +2,14 @@ import React from "react";
 import { COLOR } from "../../styled-components/color-constants";
 import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import { CommonButton } from "../common-components/Button";
-import { TAGS, ITags } from "../../mock-data/stickers";
+import { SORT_STICKERS, ISortSticker } from "../../constants/stickers";
+import { ISortProps } from "../../containers/Sort/Sort";
 
-export const SortTags = () => {
+export const SortTags = ( {
+                              amount,
+                              activeTag,
+                              sortSticker
+                          }: ISortProps ) => {
     return (
         <WrapperFlexWithoutMarginAuto
             maxWidth = { 635 }
@@ -15,7 +20,7 @@ export const SortTags = () => {
             gridRowStart = { 2 }
             gridRowEnd = { 3 }
         >
-            { TAGS.map( ( tag: ITags ) => (
+            { SORT_STICKERS.map( ( tag: ISortSticker ) => (
                 <CommonButton
                     paddingTop = { 11 }
                     paddingRight = { 19 }
@@ -34,8 +39,13 @@ export const SortTags = () => {
                     activeBackgroundColor = { COLOR.metallicBlue }
                     activeColor = { COLOR.whiteSecondary }
                     activeBorderColor = { COLOR.spaceCadetPrimary }
+                    onClick = { () => {
+                        if (sortSticker) {
+                            sortSticker(tag.id)
+                        }
+                    } }
                 >
-                    { tag }
+                    { tag.text }
                 </CommonButton>
             ) ) }
         </WrapperFlexWithoutMarginAuto>
