@@ -42,9 +42,6 @@ export const StickersList = ( { loveSticker }: IStickerList ) => {
         STICKERS.map( ( sticker ) => {
                 if (sticker.id === id) {
                     sticker.added = true;
-                    console.log(sticker.added)
-                    console.log(sticker.id)
-                    console.log(sticker)
                 }
                 return sticker;
             } )
@@ -105,7 +102,9 @@ export const StickersList = ( { loveSticker }: IStickerList ) => {
                                         </RouterLink>
                                     </CommonButtonMarginAuto>
                                     <Heart
-                                        onClick = { () => loveSticker(sticker.id) }
+                                        onClick = { () => {
+                                            loveSticker(sticker.id)
+                                        } }
                                     />
                                 </HiddenWrapper>
                             ) }
