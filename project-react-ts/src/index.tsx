@@ -1,60 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import store from "./redux/store/store";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import './index.css';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { themes } from "./styled-components/themes";
-import { Header } from "./containers/Header/Header";
-import { MainPage } from "./pages/MainPage/MainPage";
-import { ShopPage } from "./pages/ShopPage/ShopPage";
-import { WishListPage } from "./pages/WishListPage/WishListPage";
-import { BasketPage } from "./pages/BasketPage/BasketPage";
-import { CheckoutPage } from "./pages/CheckoutPage/CheckoutPage";
-import { Footer } from "./containers/Footer/Footer";
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  button {
-    display: block;
-    cursor: pointer;
-    outline: none;
-  }
-
-  a {
-    display: block;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  input {
-    display: block;
-    cursor: pointer;
-    outline: none;
-  }
-  span {
-    display: block;
-  }
-  img {
-    display: block;
-  }
-`;
+import App from "./containers/App/App";
 
 ReactDOM.render(
-    <ThemeProvider theme = { themes }>
-        <GlobalStyle />
-
-        <Header />
-            <MainPage />
-            <ShopPage />
-            <WishListPage />
-            <BasketPage />
-            <CheckoutPage />
-        <Footer />
-
-    </ThemeProvider>,
-
-    document.getElementById('root') as HTMLElement
+    <BrowserRouter>
+        <Provider store = { store }>
+            <App />
+        </Provider>
+    </BrowserRouter>,
+    document.getElementById('root')
 );
