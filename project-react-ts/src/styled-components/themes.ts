@@ -75,6 +75,7 @@ export const themes = {
         brilliantAzure: "#41A9FF",
         lightSkyBlue: "#84C5FB",
 
+        razzmatazzLightPrimary: "#ef93b6",
         razzmatazzPrimary: "#DB2C6F",
         roseRed: "#C52864",
         amaranthPurplePrimary: "#B1245A",
