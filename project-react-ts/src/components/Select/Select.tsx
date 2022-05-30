@@ -50,7 +50,7 @@ export const Select = ( {
                             onClick = { () => {
                                 setIsSelected( option.text )
                                 setIsActive( false )
-                                if (filterChange) {
+                                if (option && filterChange) {
                                     filterChange(option.id)
                                 }
                             } }
