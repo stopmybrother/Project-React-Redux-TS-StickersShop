@@ -25,7 +25,6 @@ export const AddCart = ( { addedSticker }: any ) => {
             if (sticker.id === id) {
                 sticker.loved = false;
                 sticker.inBasket = true;
-                console.log(sticker)
             }
             return sticker;
         })
