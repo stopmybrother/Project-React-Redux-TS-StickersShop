@@ -90,9 +90,10 @@ export const themes = {
 
     media: {
         phone: "(max-width: 600px)",
+        tablet: "(max-width: 700px)",
         tabletPortrait: "(max-width: 900px)",
-        tabletLandscape: "(max-width: 1200px)",
-        desktop: "(max-width: 1800)",
-        bigDesktop: "(max-width: 2400px)"
+        tabletLandscapeSmall: "(max-width: 1000px)",
+        tabletLandscape: "(max-width: 1100px)",
+        desktop: "(max-width: 1440px)",
     }
 }
