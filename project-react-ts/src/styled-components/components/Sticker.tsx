@@ -18,6 +18,10 @@ export const StickerWrapper = styled.div`
   min-height: 288px;
   height: 100%;
   position: relative;
+  @media ${props => props.theme.media.tabletPortrait} {
+    max-width: 180px;
+    min-height: 180px;
+  }
 `;
 
 export const StickerSmallWrapper = styled.div`
@@ -37,6 +41,9 @@ export const HiddenWrapper = styled.div`
   height: 100%;
   background-color: rgba( 0, 0, 0, 0.2 );
   border-radius: 5px;
+  @media ${props => props.theme.media.tabletPortrait} {
+    padding: 118px 20px 27px;
+  }
 `;
 
 export const Heart = styled.div`
@@ -91,5 +98,9 @@ export const Sticker = styled.img<IImage>`
   border-radius: ${ p => p.borderRadius || 0 }px;
   cursor: pointer;
   position: relative;
+  @media ${props => props.theme.media.tabletPortrait} {
+    max-width: 180px;
+    max-height: 180px;
+  }
 `;
 
