@@ -7,8 +7,8 @@ import { StickerSmallWrapper } from "../../styled-components/components/Sticker"
 import { Sticker } from "../../styled-components/components/Sticker";
 import { CommonButton, CommonButtonWishListMarginAuto } from "../../components/common-components/Button";
 import { Cross } from "../../components/Cross/Cross";
-import {IStickers, STICKERS} from "../../constants/stickers";
-import {RouterLink} from "../../components/common-components/RouterLink";
+import { IStickers, STICKERS } from "../../constants/stickers";
+import { RouterLink } from "../../components/common-components/RouterLink";
 
 
 export const WishListPage = () => {
@@ -151,13 +151,10 @@ export const WishListPage = () => {
                             backGroundColor = { COLOR.whitePrimary }
                             fontSize = { 20 }
                             lineHeight = { 27 }
-                            // color = { COLOR.spaceCadetPrimary }
                             hoverBorderColor = { COLOR.spaceCadetPrimary }
                             hoverBackgroundColor = { COLOR.spaceCadetPrimary }
-                            // hoverColor = { COLOR.whiteSecondary }
                             activeBorderColor = { COLOR.maastrichtBlueSecondary }
                             activeBackgroundColor = { COLOR.metallicBlue }
-                            // activeColor = { COLOR.whitePrimary }
                             gridColumnStart = { 4 }
                             gridColumnEnd = { 5 }
                             gridRowStart = { 1 }
@@ -170,7 +167,6 @@ export const WishListPage = () => {
                                 color = { COLOR.spaceCadetPrimary }
                                 hoverColor = { COLOR.whiteSecondary }
                                 activeColor = { COLOR.whitePrimary }
-                                // onClick = { () => HandleClick( sticker.id ) }
                             >
                                 Add to cart
                             </RouterLink>
@@ -209,7 +205,14 @@ export const WishListPage = () => {
                     activeColor = { COLOR.whiteSecondary }
                     activeBorderColor = { COLOR.maastrichtBlueSecondary }
                 >
-                    All stickers
+                    <RouterLink
+                        to = { `/home` }
+                        color = { COLOR.spaceCadetPrimary }
+                        hoverColor = { COLOR.whiteSecondary }
+                        activeColor = { COLOR.whitePrimary }
+                    >
+                        All stickers
+                    </RouterLink>
                 </CommonButtonWishListMarginAuto>
             </GeneralWrapper>
         </>
