@@ -9,7 +9,7 @@ export const SocialMedia = () => {
     return (
         <>
             <WrapperFlexWithoutMarginAuto
-                maxWidth = { 200 }
+                minWidth = { 200 }
                 flexDirection = "column"
                 justifyContent = "space-between"
             >
