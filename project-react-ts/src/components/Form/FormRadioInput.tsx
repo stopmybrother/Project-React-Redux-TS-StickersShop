@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { COLOR } from "../../styled-components/color-constants";
 import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
