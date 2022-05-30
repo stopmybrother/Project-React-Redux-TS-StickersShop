@@ -27,8 +27,8 @@ export const AddCart = ( { addedSticker }: any ) => {
                 sticker.inBasket = true;
             }
             return sticker;
-        })
-    }
+        });
+    };
     return (
         <>
             <GeneralWrapper
