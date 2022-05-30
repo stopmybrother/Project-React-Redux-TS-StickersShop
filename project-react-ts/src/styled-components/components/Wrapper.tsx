@@ -40,7 +40,6 @@ export const GeneralWrapper = styled.div<IWrapper>`
   width: 100%;
   min-height: ${ p => p.minHeight || 0 }vh;
   background-color: ${ p => p.backgroundColor || "transparent" };
-  
   ${ p => p.backgroundImage && css`
     background-image: url( ${ p.backgroundImage || "none" } );
     background-repeat: no-repeat;
@@ -63,6 +62,10 @@ export const Wrapper = styled.div<IWrapper>`
   padding-left: ${ p => p.paddingLeft || 0 }px;
   max-width: ${ p => p.maxWidth || 0 }px;
   width: 100%;
+  @media ${props => props.theme.media.tabletPortrait} {
+    padding: 0 16px;
+    max-width: 632px;
+  }
 `;
 
 export const WrapperWithoutMarginAuto = styled.div<IWrapper>`
@@ -77,6 +80,7 @@ export const WrapperWithoutMarginAuto = styled.div<IWrapper>`
   padding-left: ${ p => p.paddingLeft || 0 }px;
   
   max-width: ${ p => p.maxWidth || 0 }px;
+  min-width: ${ p => p.minWidth || 0 }px;
   width: 100%;
   
   border-top: 1px solid ${ p => p.borderTop || "transparent" };
@@ -118,6 +122,39 @@ export const WrapperFlexWithoutMarginAuto = styled( WrapperWithoutMarginAuto )<I
   grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
 `;
 
+export const WrapperFlexWithoutMarginAutoSortTags = styled( WrapperFlexWithoutMarginAuto )`
+  @media ${props => props.theme.media.tabletPortrait} {
+    max-width: 435px;
+    column-gap: 4px;
+  }
+`;
+
+export const WrapperCartTotal = styled( WrapperWithoutMarginAuto )<IWrapperFlex>`
+  display: flex;
+  flex-direction: ${ p => p.flexDirection || "row" };
+  justify-content: ${ p => p.justifyContent || "flex-start" };
+  align-items: ${ p => p.alignItems || "center" };
+  row-gap: ${ p => p.rowGap || 0 }px;
+  column-gap: ${ p => p.columnGap || 0 }px;
+  grid-column: ${ p => p.gridColumnStart } / ${ p => p.gridColumnEnd };
+  grid-row: ${ p => p.gridRowStart } / ${ p => p.gridRowEnd };
+  @media ${props => props.theme.media.desktop} {
+    margin-left: 760px;
+  }
+  @media ${props => props.theme.media.tabletLandscape} {
+    margin-left: 700px;
+  }
+  @media ${props => props.theme.media.tabletLandscapeSmall} {
+    margin-left: 610px;
+  }
+  @media ${props => props.theme.media.tabletPortrait} {
+    margin-left: 340px;
+  }
+  @media ${props => props.theme.media.tablet} {
+    margin-left: 300px;
+  }
+`;
+
 export const WrapperFlexWithoutMargin = styled( GeneralWrapper )<IWrapperFlex>`
   display: flex;
   flex-direction: ${ p => p.flexDirection || "row" };
@@ -149,9 +186,13 @@ export const WrapperGrid = styled( Wrapper )<IWrapperGrid>`
   align-items: ${ p => p.alignItems || "center" };
   column-gap: ${ p => p.columnGap }px;
   row-gap: ${ p => p.rowGap }px;
+  @media ${props => props.theme.media.tabletPortrait} {
+    grid-template-rows: repeat( 3, 280px);
+    grid-template-columns: repeat( 3, 180px );
+    min-height: 200px;
+    row-gap: 20px;
+  }
 `;
-
-
 
 export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
   margin: 0 auto;
@@ -166,10 +207,22 @@ export const WrapperGridWithoutMarginBottom = styled( Wrapper )<IWrapperGrid>`
 
 export const WrapperGridWishList = styled( WrapperGridWithoutMarginBottom )`
   grid-template-columns: 480px 130px 200px 160px 230px;
+  @media ${props => props.theme.media.tabletPortrait} {
+    grid-template-columns: 370px 80px 120px 130px 230px;
+  }
+  @media ${props => props.theme.media.phone} {
+    grid-template-columns: 350px 50px 120px 100px 230px;
+  }
 `;
 
 export const WrapperGridBasket = styled( WrapperGridWithoutMarginBottom )`
   grid-template-columns: 480px 154px 152px 184px 230px;
+  @media ${props => props.theme.media.tabletPortrait} {
+    grid-template-columns: 450px 104px 152px 104px 200px;
+  }
+  @media ${props => props.theme.media.phone} {
+    grid-template-columns: 350px 84px 152px 84px 200px;
+  }
 `;
 
 export const WrapperGridWithoutMarginAuto = styled( WrapperWithoutMarginAuto )<IWrapperGrid>`
