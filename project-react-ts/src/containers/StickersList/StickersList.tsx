@@ -51,7 +51,6 @@ export const StickersList = ( { loveSticker }: IStickerList ) => {
             if (sticker.id === id ) {
                 sticker.loved = !sticker.loved;
             }
-            console.log(sticker)
             return sticker;
         })
     };
