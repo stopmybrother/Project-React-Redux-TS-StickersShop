@@ -1,4 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { counterSelector } from "../../redux/selectors/counterSelector/counterSelector";
+import { increaseCounter } from "../../redux/actions/counterActionCreator/counterActionCreator";
 import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
 import { COLOR } from "../../styled-components/color-constants";
 import { CommonButton } from "../common-components/Button";
@@ -22,7 +25,14 @@ export const CounterButtons = ( {
                                     gridRowEnd
                                 }: ICounter) => {
     const [ count, setCount ] = useState( 0 );
-
+    const counter = useSelector( counterSelector );
+    let dispatch = useDispatch();
+    const increaseButton = () => {
+        dispatch( ( increaseCounter( counter ) ))
+    };
+    const decreaseButton = () => {
+        dispatch( ( increaseCounter( counter ) ))
+    }
     return (
         <WrapperFlexWithoutMarginAuto
             maxWidth = { 152 }
@@ -49,7 +59,7 @@ export const CounterButtons = ( {
                 activeBorderColor = "transparent"
                 activeBackgroundColor = "transparent"
                 activeColor = { COLOR.brownChocolate }
-                onClick = { () => setCount( count - 1 ) }
+                onClick = { () => decreaseButton }
                 disabled = { count === 0 }
             >
                 -
@@ -63,7 +73,7 @@ export const CounterButtons = ( {
                 color = { colorText }
                 backgroundColor = { backgroundColorText }
             >
-                { count }
+                { counter }
             </Text>
             <CommonButton
                 paddingTop = { 10 }
@@ -81,7 +91,7 @@ export const CounterButtons = ( {
                 activeBorderColor = "transparent"
                 activeBackgroundColor = "transparent"
                 activeColor = { COLOR.brownChocolate }
-                onClick = { () => setCount( count + 1 ) }
+                onClick = { () => increaseButton }
             >
                 +
             </CommonButton>
