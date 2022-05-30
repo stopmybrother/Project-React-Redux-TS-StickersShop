@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { GeneralWrapper } from "../../styled-components/components/Wrapper";
 import { TextInForm } from "../../styled-components/components/Text";
 import { IInfoInputs, PERSONAL_INFO_INPUTS } from "../../constants/FormInputs";
