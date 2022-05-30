@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { GeneralWrapper } from "../../styled-components/components/Wrapper";
 import { TextInForm } from "../../styled-components/components/Text";
 import { IInfoInputs, ADDRESS_INFO_INPUTS } from "../../constants/FormInputs";
@@ -17,8 +17,6 @@ export const AddressInfo = () => {
     const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setAddressInfo( { ...addressInfo, [ e.target.name ]: e.target.value } );
     };
-
-    console.log( addressInfo );
 
     return (
         <>
