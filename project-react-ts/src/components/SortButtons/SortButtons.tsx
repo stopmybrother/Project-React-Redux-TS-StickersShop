@@ -1,7 +1,7 @@
 import React from "react";
 import { COLOR } from "../../styled-components/color-constants";
-import { WrapperFlexWithoutMarginAuto } from "../../styled-components/components/Wrapper";
-import { CommonButton } from "../common-components/Button";
+import { WrapperFlexWithoutMarginAutoSortTags } from "../../styled-components/components/Wrapper";
+import { CommonButtonSortTag } from "../common-components/Button";
 import { SORT_STICKERS, ISortSticker } from "../../constants/stickers";
 import { ISortProps } from "../../containers/Sort/Sort";
 
@@ -11,7 +11,7 @@ export const SortTags = ( {
                               sortSticker
                           }: ISortProps ) => {
     return (
-        <WrapperFlexWithoutMarginAuto
+        <WrapperFlexWithoutMarginAutoSortTags
             maxWidth = { 635 }
             justifyContent = "space-between"
             columnGap = { 24 }
@@ -21,7 +21,7 @@ export const SortTags = ( {
             gridRowEnd = { 3 }
         >
             { SORT_STICKERS.map( ( tag: ISortSticker ) => (
-                <CommonButton
+                <CommonButtonSortTag
                     paddingTop = { 11 }
                     paddingRight = { 19 }
                     paddingBottom = { 11 }
@@ -40,14 +40,14 @@ export const SortTags = ( {
                     activeColor = { COLOR.whiteSecondary }
                     activeBorderColor = { COLOR.spaceCadetPrimary }
                     onClick = { () => {
-                        if (sortSticker) {
+                        if (tag && sortSticker) {
                             sortSticker(tag.id)
                         }
                     } }
                 >
                     { tag.text }
-                </CommonButton>
+                </CommonButtonSortTag>
             ) ) }
-        </WrapperFlexWithoutMarginAuto>
+        </WrapperFlexWithoutMarginAutoSortTags>
     );
 };
