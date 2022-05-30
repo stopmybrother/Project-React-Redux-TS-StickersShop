@@ -38,9 +38,6 @@ export const RelatedProducts = ( { notAddedStickers }: any ) => {
         STICKERS.map( ( sticker ) => {
             if (sticker.id === id) {
                 sticker.added = true;
-                console.log(sticker.added)
-                console.log(sticker.id)
-                console.log(sticker)
             }
             return sticker;
         } )
