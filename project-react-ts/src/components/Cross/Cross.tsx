@@ -85,11 +85,11 @@ export const Cross = ( {
                 gridColumnEnd = { gridColumnEnd }
                 gridRowStart = { gridRowStart }
                 gridRowEnd = { gridRowEnd }
-                // onClick = { () => {
-                //     if (removeSticker) {
-                //         removeSticker(id)
-                //     }
-                // } }
+                onClick = { () => {
+                    if (removeSticker && id !== undefined) {
+                        removeSticker(id)
+                    }
+                } }
             >
                 <CrossSpan
                     widthSpan = { widthSpan }
