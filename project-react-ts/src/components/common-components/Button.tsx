@@ -59,8 +59,34 @@ export const CommonButton = styled.button<IButton>`
   ` }
 `;
 
+export const CommonButtonSortTag = styled(CommonButton)`
+  @media ${props => props.theme.media.tabletPortrait} {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 17px;
+  }
+`;
+
 export const CommonButtonMaxWidth = styled( CommonButton )`
-    max-width: ${ p => p.maxWidth || 0 }px;
+  max-width: ${ p => p.maxWidth || 0 }px;
+  @media ${props => props.theme.media.desktop} {
+    margin-left: 775px;
+  }
+  @media ${props => props.theme.media.tabletLandscape} {
+    margin-left: 715px;
+  }
+  @media ${props => props.theme.media.tabletLandscapeSmall} {
+    margin-left: 665px;
+    padding: 10px 25px;
+  }
+  @media ${props => props.theme.media.tabletPortrait} {
+    margin-left: 440px;
+    padding: 10px 15px;
+  }
+  @media ${props => props.theme.media.tablet} {
+    margin-left: 400px;
+    padding: 10px 15px;
+  }
 `;
 
 export const CommonButtonMarginAuto = styled( CommonButton )`
