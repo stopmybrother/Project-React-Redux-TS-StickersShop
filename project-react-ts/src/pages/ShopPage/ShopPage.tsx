@@ -9,8 +9,6 @@ import { RelatedProducts } from "../../containers/RelatedProducts/RelatedProduct
 export const ShopPage = () => {
     let addedSticker = STICKERS.filter((sticker) => sticker.added)
     let notAddedStickers = STICKERS.filter((sticker) => !sticker.added)
-    console.log(addedSticker)
-    console.log(STICKERS)
     return (
         <>
             <Banner
