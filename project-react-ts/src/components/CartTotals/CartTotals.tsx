@@ -1,15 +1,22 @@
 import React from "react";
-import { WrapperFlexWithoutMarginAuto, WrapperFlex } from "../../styled-components/components/Wrapper";
+import { WrapperFlex, WrapperCartTotal} from "../../styled-components/components/Wrapper";
 import { CommonButtonMaxWidthMarginAuto } from "../common-components/Button";
 import { COLOR } from "../../styled-components/color-constants";
 import Text from "../../styled-components/components/Text";
 import { RouterLink } from "../common-components/RouterLink";
+import { IStickers } from "../../constants/stickers";
 
-export const CartTotals = () => {
+interface IStickerList {
+    stickerList: IStickers[];
+}
+export const CartTotals = ( { stickerList }: IStickerList ) => {
+    let prices = stickerList
+        .map((sticker) => sticker.price)
+        .reduce((prevValue, value) => prevValue + value, 0 )
     return (
         <>
-            <WrapperFlexWithoutMarginAuto
-                marginLeft = { 800 }
+            <WrapperCartTotal
+                marginLeft = { 775 }
                 maxWidth = { 296 }
                 flexDirection = "column"
                 rowGap = { 48 }
@@ -46,7 +53,7 @@ export const CartTotals = () => {
                             textAlign = "right"
                             color = { COLOR.spaceCadetPrimary }
                         >
-                            $1.5
+                            { prices }$
                         </Text>
                     </WrapperFlex>
                     <WrapperFlex
@@ -93,7 +100,7 @@ export const CartTotals = () => {
                             textAlign = "right"
                             color = { COLOR.razzmatazzPrimary }
                         >
-                            $1.5
+                            { prices }$
                         </Text>
                     </WrapperFlex>
                 </WrapperFlex>
@@ -125,7 +132,7 @@ export const CartTotals = () => {
                         Proceed to checkout
                     </RouterLink>
                 </CommonButtonMaxWidthMarginAuto>
-            </WrapperFlexWithoutMarginAuto>
+            </WrapperCartTotal>
         </>
     );
 };
