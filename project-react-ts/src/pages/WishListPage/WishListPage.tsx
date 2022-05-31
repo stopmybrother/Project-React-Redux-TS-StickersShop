@@ -10,7 +10,6 @@ import { Cross } from "../../components/Cross/Cross";
 import { IStickers, STICKERS } from "../../constants/stickers";
 import { RouterLink } from "../../components/common-components/RouterLink";
 
-
 export const WishListPage = () => {
     let stickersLoved = STICKERS.filter((sticker: IStickers) => sticker.loved);
     const HandleClick = ( id: number ) => {
