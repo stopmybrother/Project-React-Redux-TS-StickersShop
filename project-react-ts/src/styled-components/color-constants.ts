@@ -41,7 +41,6 @@ export const COLOR: Record<string, string> = {
     outerSpace: "#434648",
     arsenic: "#3C3F41",
 
-
     blackPrimary: "#000000",
     blackOpacityTwentyFive: "#0000003F",
 
