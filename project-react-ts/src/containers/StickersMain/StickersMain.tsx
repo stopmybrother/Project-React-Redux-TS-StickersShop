@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { GeneralWrapper, Wrapper } from "../../styled-components/components/Wrapper";
 import { COLOR } from "../../styled-components/color-constants";
 import { Sort } from "../Sort/Sort";
