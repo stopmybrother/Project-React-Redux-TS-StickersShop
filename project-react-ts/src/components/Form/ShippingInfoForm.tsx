@@ -15,11 +15,9 @@ export const ShippingInfo = () => {
 
     const handleRadioClick = ( e: React.ChangeEvent<HTMLInputElement> ): void => {
         setSelectedRadioInput( e.currentTarget.checked );
-        console.log(selectedRadioInput)
     };
     const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setShippingInfo( { ...shippingInfo, [ e.target.name ]: e.target.value } );
-        console.log(shippingInfo)
     };
     return (
         <>
