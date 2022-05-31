@@ -104,7 +104,6 @@ export const StickersList = ( { loveSticker }: IStickerList ) => {
                                             color = { COLOR.whitePrimary }
                                             hoverColor = { COLOR.whitePrimary }
                                             activeColor = { COLOR.whitePrimary }
-                                            // onClick = { () => HandleClick( sticker.id ) }
                                         >
                                             Add to cart
                                         </RouterLink>
